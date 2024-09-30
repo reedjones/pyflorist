@@ -1,5 +1,130 @@
-python client for florist.one api 
+# pyflorist
 
-github.com/reedjones/pyflorist
+`pyflorist` is a Python client for the Florist One API, making it easy to integrate flower delivery services into your website or application. This package helps developers interact with the Florist One API's product listings, check delivery dates, handle secure payments, and place flower orders.
 
-pip install pyflorist==0.1
+## Features
+
+- **Get Products**: Retrieve product information (image URLs, prices, descriptions) to display in your app.
+- **Check Delivery Date**: Verify available delivery dates for orders.
+- **Get Total**: Ensure prices are correct between your app and Florist One.
+- **Authorize Payment**: Retrieve a secure payment token for processing payments.
+- **Place Order**: Submit all order, delivery, and payment information to Florist One.
+- **Retrieve Order Information**: Optionally retrieve order details for display to the customer.
+
+## Installation
+
+Install the package using pip:
+
+```bash
+pip install pyflorist
+
+Usage
+Setup your API credentials: You'll need to register for the Florist One API and obtain an API key to interact with their services.
+
+Initialize the client:
+```python
+from pyflorist import FloristClient
+
+client = FloristClient(api_key="your_api_key_here")
+```
+Retrieve available products:
+```python
+products = client.get_products()
+for product in products:
+    print(product['name'], product['price'])
+```
+Check delivery dates:
+```python
+
+valid_dates = client.check_delivery_date(zip_code="10001")
+print(valid_dates)
+```
+
+
+
+## Place an order:
+
+```python
+order = client.place_order(
+    product_id="123",
+    delivery_date="2024-10-01",
+    payment_info={...},
+    customer_info={...},
+    recipient_info={...}
+)
+print(order['status'])
+
+```
+
+
+
+
+## API Resources
+The pyflorist client interacts with the following Florist One API resources:
+
+Get Products: Fetch product data like images, descriptions, and prices.
+Check Delivery Date: Validate delivery dates for specific locations.
+Get Total: Verify price and details before processing the order.
+Authorize Payment: Obtain a secure payment token.
+Place Order: Send order information including delivery details, payment, and customer information.
+Get Order Information: Optionally retrieve order details for display or other purposes.
+
+
+
+## Requirements
+Python 3.7+
+requests
+pydantic
+
+
+## License
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+## Contributing
+Contributions are welcome! Please open an issue or submit a pull request on GitHub if you find bugs or want to add new features.
+
+## Links
+API Documentation: Florist One API
+Project Repository: pyflorist on GitHub
+
+### GitHub Project Details:
+
+- **Repository Name**: `pyflorist`
+- **Description**: A Python client for the Florist One API, enabling easy integration of flower delivery services into your website or app.
+- **Topics**: Python, API Client, Florist, Flower Delivery, E-commerce, Checkout Integration
+- **License**: MIT License
+- **Installation**: `pip install pyflorist`
+- **API Documentation**: Link to the official Florist One API documentation: [https://www.florist.one/api](https://www.florist.one/api)
+
+### GitHub Issue Templates:
+
+```markdown
+# Feature Request
+
+**Is your feature request related to a problem? Please describe.**
+A clear and concise description of what the problem is.
+
+**Describe the solution you'd like**
+A clear and concise description of what you want to happen.
+
+**Additional context**
+Add any other context or screenshots about the feature request here.
+
+
+
+# Bug Report
+
+**Describe the bug**
+A clear and concise description of what the bug is.
+
+**To Reproduce**
+Steps to reproduce the behavior.
+
+**Expected behavior**
+A clear and concise description of what you expected to happen.
+
+**Screenshots**
+If applicable, add screenshots to help explain your problem.
+
+**Additional context**
+Add any other context about the problem here.
