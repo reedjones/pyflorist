@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: pyflorist
+Version: 0.1
+Summary: python client for the florist.one api
+Home-page: https://github.com/reedjones/pyflorist
+Download-URL: https://github.com/reedjones/pyflorist/archive/v_01.tar.gz
+Author: reed jones
+Author-email: reedmjones@outlook.com
+License: MIT
+Keywords: florist,api,flower delivery
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+License-File: LICENSE.txt
+Requires-Dist: requests
+Requires-Dist: pydantic
